@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 /**
  * 퀴즈 페이지.
@@ -7,7 +7,21 @@ import { useState } from 'react';
 const QuizPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const totalQuestions = 5;
-  const timeLeft = 20; // 남은 시간 (초 단위)
+  const [timeLeft, setTimeLeft] = useState(10); // 타이머를 10초로 설정
+
+  useEffect(() => {
+    if (timeLeft > 0) {
+      // 타이머가 1초마다 감소
+      const timerId = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
+      return () => clearTimeout(timerId); // 타이머를 정리
+    } else {
+      // 시간이 0이 되면 다음 문제로 이동
+      if (currentQuestion < totalQuestions) {
+        setCurrentQuestion(currentQuestion + 1); // 다음 문제로 이동
+        setTimeLeft(10); // 타이머를 10초로 리셋
+      }
+    }
+  }, [timeLeft, currentQuestion]); // timeLeft와 currentQuestion이 변경될 때마다 실행
 
   return (
     <div style={styles.quizContainer}>
@@ -21,7 +35,7 @@ const QuizPage = () => {
           <div
             style={{
               ...styles.timerBar,
-              width: `${(timeLeft / 20) * 100}%`, // 타이머 진행 상황
+              width: `${(timeLeft / 10) * 100}%`, // 타이머 진행 상황
             }}
           ></div>
         </div>
@@ -30,7 +44,7 @@ const QuizPage = () => {
       <div style={styles.questionContainer}>
         <span style={styles.questionNumber}>문제 {currentQuestion}/{totalQuestions}</span>
         <div style={styles.questionBox}>
-          <div>Q1.</div>
+          <div>Q{currentQuestion}.</div>
           <textarea placeholder="A." style={styles.answerBox}></textarea>
         </div>
       </div>
@@ -44,7 +58,6 @@ const styles = {
     border: '1px solid #ccc',
     padding: '20px',
     width: '300px',
-    fontFamily: 'Arial, sans-serif',
   },
   statusBar: {
     display: 'flex',
@@ -69,7 +82,7 @@ const styles = {
   },
   timerBar: {
     height: '100%',
-    backgroundColor: '#000',
+    backgroundColor: '#ff0000',
   },
   timeLeft: {
     fontSize: '12px',
@@ -88,7 +101,7 @@ const styles = {
   },
   answerBox: {
     width: '100%',
-    height: '50px',
+    height: '70px',
     borderRadius: '5px',
     border: '1px solid #ccc',
     padding: '5px',
@@ -98,9 +111,7 @@ const styles = {
     width: '100%',
     padding: '10px',
     backgroundColor: '#ddd',
-    border: 'none',
     borderRadius: '5px',
-    cursor: 'pointer',
   },
 };
 
