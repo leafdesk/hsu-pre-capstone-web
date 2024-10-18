@@ -1,5 +1,8 @@
-'use client';
+'use client'
 
+/**
+ * 퀴즈 페이지.
+ */
 const QuizPage = () => {
   return (
     <>
@@ -7,7 +10,7 @@ const QuizPage = () => {
 
       <div>퀴즈 화면 구현 예정....</div>
     </>
-  );
-};
+  )
+}
 
-export default QuizPage;
+export default QuizPage
