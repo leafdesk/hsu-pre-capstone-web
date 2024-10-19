@@ -1,11 +1,12 @@
 'use client'
 
-import { useParams } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 
 /**
  * 피드백 페이지.
  */
 const FeedbackPage = () => {
+  const router = useRouter();
   const { meetingId, name } = useParams();
 
   // 기본값은 'Minseo'
@@ -13,6 +14,16 @@ const FeedbackPage = () => {
   
   const decodedName = decodeURIComponent(participantName);
   const displayName = typeof decodedName === 'string' ? decodedName.charAt(0).toUpperCase() + decodedName.slice(1) : 'Minseo';
+
+  // 버튼 클릭 시 더 자세한 피드백 화면으로 이동
+  const handleDetailedFeedbackClick = () => {
+    router.push(`/${meetingId}/feedback/${participantName}/detailed`);
+  };
+
+  // 뒤로 가기 버튼 클릭 핸들러
+  const handleBackClick = () => {
+    router.back();
+  };
 
   return (
     <div className="max-w-7xl mx-auto py-6 px-6">
@@ -35,8 +46,21 @@ const FeedbackPage = () => {
               <div className="h-64 bg-gray-300 rounded-lg"></div>
             </div>
             
-            <div className="text-right">
-              <button className="bg-gray-300  py-2 px-4 rounded-lg shadow hover:bg-gray-600">
+            {/* 버튼 섹션 */}
+            <div className="flex justify-between mt-6">
+              {/* 뒤로가기 버튼 */}
+              <button
+                onClick={handleBackClick}
+                className="bg-gray-300 py-2 px-4 rounded-lg shadow hover:bg-gray-400 text-sm"
+              >
+                &larr;
+              </button>
+
+              {/* 자세한 피드백 보기 버튼 */}
+              <button 
+                onClick={handleDetailedFeedbackClick}
+                className="bg-gray-300 py-2 px-4 rounded-lg shadow hover:bg-gray-400"
+              >
                 자세한 피드백 보기
               </button>
             </div>

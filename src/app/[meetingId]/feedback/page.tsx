@@ -11,11 +11,12 @@ const FeedbackPage = () => {
 
   // 참여자 배열
   const participants = [
-    { name: '조민서', feedback: 'Feedback...' },
-    { name: '오승민', feedback: 'Feedback...' },
-    { name: '김정훈', feedback: 'Feedback...' },
-    { name: '이상건', feedback: 'Feedback...' },
+    { name: '조민서', feedback: 'Feedback...'},
+    { name: '오승민', feedback: 'Feedback...'},
+    { name: '김정훈', feedback: 'Feedback...'},
+    { name: '이상건', feedback: 'Feedback...'},
   ];
+
 
   // 참여자 버튼 클릭 시 페이지 이동
   const handleButtonClick = (participantName: string) => {
