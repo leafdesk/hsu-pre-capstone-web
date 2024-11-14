@@ -1,118 +1,111 @@
-'use client';
-import { useState, useEffect } from 'react';
+'use client'
+import { useState, useEffect } from 'react'
 
 /**
  * 퀴즈 페이지.
  */
 const QuizPage = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(1);
-  const totalQuestions = 5;
-  const [timeLeft, setTimeLeft] = useState(10); // 타이머를 10초로 설정
+  const [currentQuestion, setCurrentQuestion] = useState(1)
+  const totalQuestions = 5
+  const [timeLeft, setTimeLeft] = useState(10) // 타이머를 10초로 설정
+  const [showResult, setShowResult] = useState(false) // 결과 모달 표시 여부
+  const [answers, setAnswers] = useState<(boolean | null)[]>([
+    null,
+    null,
+    null,
+    null,
+    null,
+  ]) // 각 문제의 정답 여부
 
   useEffect(() => {
     if (timeLeft > 0) {
-      // 타이머가 1초마다 감소
-      const timerId = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
-      return () => clearTimeout(timerId); // 타이머를 정리
+      const timerId = setTimeout(() => setTimeLeft(timeLeft - 1), 1000)
+      return () => clearTimeout(timerId)
     } else {
-      // 시간이 0이 되면 다음 문제로 이동
       if (currentQuestion < totalQuestions) {
-        setCurrentQuestion(currentQuestion + 1); // 다음 문제로 이동
-        setTimeLeft(10); // 타이머를 10초로 리셋
+        setCurrentQuestion(currentQuestion + 1)
+        setTimeLeft(10)
       }
     }
-  }, [timeLeft, currentQuestion]); // timeLeft와 currentQuestion이 변경될 때마다 실행
+  }, [timeLeft, currentQuestion])
+
+  const handleSubmit = () => {
+    const newAnswers = answers.map((answer, index) =>
+      index + 1 <= currentQuestion ? Math.random() > 0.5 : answer,
+    )
+    setAnswers(newAnswers)
+    setShowResult(true)
+  }
+
+  const closeModal = () => {
+    setShowResult(false)
+  }
 
   return (
-    <div style={styles.quizContainer}>
-      <div style={styles.statusBar}>
-        <span style={styles.progressText}>
+    <div className="border border-gray-300 p-5 w-80 mx-auto">
+      <div className="flex justify-between mb-3">
+        <span className="text-sm">
           문제 풀이 현황 {currentQuestion}/{totalQuestions}
         </span>
       </div>
-      <div style={styles.timerContainer}>
-        <div style={styles.timerBarContainer}>
+      <div className="flex items-center mb-3">
+        <div className="flex-1 h-2 bg-gray-200 rounded-lg overflow-hidden mr-2">
           <div
-            style={{
-              ...styles.timerBar,
-              width: `${(timeLeft / 10) * 100}%`, // 타이머 진행 상황
-            }}
+            className="h-full bg-red-500"
+            style={{ width: `${(timeLeft / 10) * 100}%` }}
           ></div>
         </div>
-        <span style={styles.timeLeft}>{timeLeft}</span>
+        <span className="text-sm">{timeLeft}</span>
       </div>
-      <div style={styles.questionContainer}>
-        <span style={styles.questionNumber}>문제 {currentQuestion}/{totalQuestions}</span>
-        <div style={styles.questionBox}>
+      <div className="mb-3">
+        <span className="font-bold mb-1 block">
+          문제 {currentQuestion}/{totalQuestions}
+        </span>
+        <div className="border border-gray-300 p-3 rounded-lg">
           <div>Q{currentQuestion}.</div>
-          <textarea placeholder="A." style={styles.answerBox}></textarea>
+          <textarea
+            placeholder="A."
+            className="w-full h-20 border border-gray-300 rounded-lg p-2 mt-2 resize-none"
+          ></textarea>
         </div>
       </div>
-      <button style={styles.submitButton}>답안 제출</button>
+      <button
+        className="w-full py-2 bg-gray-300 rounded-lg"
+        onClick={handleSubmit}
+      >
+        답안 제출
+      </button>
+
+      {showResult && (
+        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white p-5 rounded-lg shadow-lg w-64">
+            <h3 className="text-lg font-bold mb-3">정답 수는?</h3>
+            <p className="text-sm mb-3">
+              5문제 중 {answers.filter((a) => a).length}문제
+            </p>
+            <div className="grid grid-cols-3 gap-2 mb-4">
+              {answers.map((isCorrect, index) => (
+                <div
+                  key={index}
+                  className={`w-10 h-10 flex items-center justify-center rounded-lg ${
+                    isCorrect ? 'bg-green-300' : 'bg-red-300'
+                  }`}
+                >
+                  {index + 1}
+                </div>
+              ))}
+            </div>
+            <button
+              className="w-full py-2 bg-gray-300 rounded-lg"
+              onClick={closeModal}
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      )}
     </div>
-  );
-};
+  )
+}
 
-const styles = {
-  quizContainer: {
-    border: '1px solid #ccc',
-    padding: '20px',
-    width: '300px',
-  },
-  statusBar: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    marginBottom: '10px',
-  },
-  progressText: {
-    fontSize: '12px',
-  },
-  timerContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: '10px',
-  },
-  timerBarContainer: {
-    flex: 1,
-    height: '8px',
-    backgroundColor: '#ddd',
-    marginRight: '10px',
-    borderRadius: '5px',
-    overflow: 'hidden',
-  },
-  timerBar: {
-    height: '100%',
-    backgroundColor: '#ff0000',
-  },
-  timeLeft: {
-    fontSize: '12px',
-  },
-  questionContainer: {
-    marginBottom: '10px',
-  },
-  questionNumber: {
-    fontWeight: 'bold',
-    marginBottom: '5px',
-  },
-  questionBox: {
-    border: '1px solid #ccc',
-    padding: '10px',
-    borderRadius: '5px',
-  },
-  answerBox: {
-    width: '100%',
-    height: '70px',
-    borderRadius: '5px',
-    border: '1px solid #ccc',
-    padding: '5px',
-    marginTop: '5px',
-  },
-  submitButton: {
-    width: '100%',
-    padding: '10px',
-    backgroundColor: '#ddd',
-    borderRadius: '5px',
-  },
-};
-
-export default QuizPage;
+export default QuizPage
