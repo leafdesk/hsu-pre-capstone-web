@@ -41,6 +41,7 @@ const FeedbackPage = () => {
               <br></br>
               <br></br>
               <span className="text-sm text-gray-500">
+                {/* 이 부분에 동적으로 피드백이 작성됨.*/}
                 회의 중 {displayName}님의 발언 및 성과에 대한 구체적인 데이터와
                 차트, 인사이트를 제공하여 종합적인 내용을 보여줄 수 있습니다.
               </span>
@@ -52,7 +53,7 @@ const FeedbackPage = () => {
               href={`/${meetingId}/feedback`}
               className="bg-gray-300 py-2 px-4 rounded-lg shadow hover:bg-gray-400 text-sm"
             >
-              &larr;
+              &larr;pn
             </Link>
           </div>
         </div>
