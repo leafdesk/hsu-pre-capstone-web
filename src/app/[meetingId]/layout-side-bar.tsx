@@ -2,14 +2,11 @@
 
 import { Layout } from 'lucide-react'
 
-/**
- * 레이아웃 사이드 바.
- */
 const LayoutSideBar = () => {
   return (
     <aside className="w-64 bg-white shadow-md">
       <div className="p-5">
-        <h2 className="text-xl font-semibold text-gray-800">내 프로필</h2>
+        <h2 className="text-xl font-bold text-gray-800">내 프로필</h2>
         <div className="mt-4 flex items-center space-x-3">
           <div className="h-10 w-10 rounded-full bg-gray-200"></div>
           <div>
@@ -36,9 +33,9 @@ const LayoutSideBar = () => {
               <li key={index}>
                 <a
                   href="#"
-                  className="flex items-center px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+                  className="flex items-center px-3 py-2 bg-gray-100 text-gray-800 hover:bg-blue-100 hover:text-blue-600 rounded-lg transition"
                 >
-                  <item.icon className="h-5 w-5 mr-3 text-gray-500" />
+                  <item.icon className="h-5 w-5 mr-3 text-blue-500" />
                   {item.name}
                 </a>
               </li>
@@ -54,7 +51,7 @@ const LayoutSideBar = () => {
             {['조민서', '오승민', '김정훈', '이상건'].map((name, index) => (
               <li key={index} className="flex items-center space-x-3">
                 <div className="h-8 w-8 rounded-full bg-gray-200"></div>
-                <span className="text-gray-700">{name}</span>
+                <span className="text-gray-800">{name}</span>
               </li>
             ))}
           </ul>

@@ -7,13 +7,13 @@ const LayoutHeader = () => {
   const params = useParams()
   const pathname = usePathname()
 
-  const SELECTED_TAB_STYLE = `px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition`
-  const TAB_STYLE = `px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition`
+  const SELECTED_TAB_STYLE = `px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition`
+  const TAB_STYLE = `px-4 py-2 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-blue-100 hover:text-blue-600 transition`
 
   return (
     <header className="bg-white shadow-sm">
       <div className="max-w-7xl mx-auto py-4 px-6 flex justify-between items-center">
-        <h1 className="text-2xl font-semibold text-gray-800">
+        <h1 className="text-2xl font-bold text-gray-800">
           회의 ID: {params.meetingId}
         </h1>
         <div className="flex space-x-4">
