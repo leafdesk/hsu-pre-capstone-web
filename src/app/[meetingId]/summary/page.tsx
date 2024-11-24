@@ -6,7 +6,7 @@
 const SummaryPage = () => {
   return (
     <div className="max-w-7xl mx-auto py-6 px-6">
-      <div className="bg-white shadow rounded-lg p-6">
+      <div className="bg-white shadow-lg rounded-lg p-6">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-semibold text-gray-800">
             Okestro Meeting Coach
