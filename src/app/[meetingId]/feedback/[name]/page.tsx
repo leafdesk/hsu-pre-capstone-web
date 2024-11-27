@@ -44,7 +44,8 @@ const FeedbackPage = () => {
         '성과에 대한 긍정적 인식을 높일 필요가 있습니다.',
         '동료들과의 적극적인 의견 교환을 권장합니다.',
       ],
-      video: '/videos/meeting1_speaker2.mp4', // 개별 영상 URL
+      video:
+        'https://uced2691f93299a1208cfffc1969.dl.dropboxusercontent.com/cd/0/inline/CfJLRBHfc1UNXrcfivecao2UPjWpjPjx1X3X5MHF-Xx4T-juSQkpSpbel-R8pyvYv9wgp7inXhDH8vOqeufgBaNjdcNPhlYVzRv5tCyjNllD4OWtLkZvsjiP3MXmEyuHHfo1EJZuHM7AgWlT_SnDcrld/file#', // 개별 영상 URL
     },
     이상건: {
       summary:
@@ -74,7 +75,8 @@ const FeedbackPage = () => {
         '다른 팀원들의 우려사항에 대해 더 공감하는 자세를 보여주면 좋겠습니다.',
         '프로젝트 완수에 대한 자신감을 팀원들과 더 공유해주세요.',
       ],
-      video: '/videos/meeting1_speaker3.mp4', // 개별 영상 URL
+      video:
+        'https://ucb908f0489ba2c605d4c62cbef5.dl.dropboxusercontent.com/cd/0/inline/CfJe6cEFLVq_Sk1OEEfRS460EYZKJoKUbtBZk1aFD4_DoXRrIOJMkF3tajIh6z3LoBtaRydXMZS2XdtwoKsmliSchUcKBraL-BR23RLL6q57VD3FDJmnI-WiNmq7aHkVH7LCoWP3gPNvXzcbKVNxA0Q-/file#', // 개별 영상 URL
     },
   }
 
