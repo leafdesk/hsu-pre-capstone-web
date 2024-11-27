@@ -80,11 +80,15 @@ const FeedbackPage = () => {
     },
   }
 
-  const feedback = feedbackDetails[displayName] || {
+  // Add type for valid participant names
+  type ParticipantName = '김정훈' | '조민서' | '이상건' | '오승민'
+
+  // Add type assertion when accessing feedbackDetails
+  const feedback = feedbackDetails[displayName as ParticipantName] || {
     summary: '피드백이 없습니다.',
     details: [],
     suggestions: [],
-    video: '', // 기본 영상 URL
+    video: '',
   }
 
   return (
