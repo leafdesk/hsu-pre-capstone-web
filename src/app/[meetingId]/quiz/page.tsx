@@ -1,12 +1,51 @@
 'use client'
 import { useState, useEffect } from 'react'
 
+const quizQuestions = [
+  {
+    question: '이번 회의는 몇 주차 프로젝트 진행상황 점검 회의였나요?',
+    options: ['11주차', '12주차', '13주차', '14주차'],
+    correctAnswer: 2,
+  },
+  {
+    question: '현재 서버 작업의 진행 상태는 어떠한가요?',
+    options: [
+      '초기 설계 단계',
+      '모델 완성 및 서버 업로드 예정',
+      '테스트 단계',
+      '완전히 완료된 상태',
+    ],
+    correctAnswer: 1,
+  },
+  {
+    question: '프로젝트의 최종 발표일은 언제인가요?',
+    options: ['수요일', '목요일', '금요일', '토요일'],
+    correctAnswer: 1,
+  },
+  {
+    question:
+      '회의 중 가장 많은 발언을 한 참가자는 누구인가요? (감정 데이터 기준)',
+    options: ['참가자1', '참가자2', '참가자3', '참가자4'],
+    correctAnswer: 0,
+  },
+  {
+    question: '현재 프론트엔드 팀이 진행 중인 작업이 아닌 것은?',
+    options: [
+      '레이아웃 수정',
+      '디자인 개선',
+      '데이터베이스 구축',
+      '로그인 기능 구현',
+    ],
+    correctAnswer: 2,
+  },
+]
+
 /**
  * 퀴즈 페이지.
  */
 const QuizPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(1)
-  const totalQuestions = 5
+  const totalQuestions = quizQuestions.length
   const [timeLeft, setTimeLeft] = useState(10) // 타이머를 10초로 설정
   const [showResult, setShowResult] = useState(false) // 결과 모달 표시 여부
   const [answers, setAnswers] = useState<(boolean | null)[]>(
@@ -32,7 +71,7 @@ const QuizPage = () => {
   }
 
   const handleSubmit = () => {
-    const correctAnswer = Math.floor(Math.random() * 4) // 임의의 정답 설정 (0~3 중 하나)
+    const correctAnswer = quizQuestions[currentQuestion - 1].correctAnswer
     const isCorrect = selectedOption === correctAnswer
     const newAnswers = answers.map((answer, index) =>
       index + 1 === currentQuestion ? isCorrect : answer,
@@ -89,11 +128,11 @@ const QuizPage = () => {
         </span>
         <div className="border border-gray-300 p-3 rounded-lg bg-gray-100 shadow-md">
           <div className="text-black font-semibold mb-3">
-            Q{currentQuestion}. 다음 중 가장 적합한 답을 선택하세요.
+            {quizQuestions[currentQuestion - 1].question}
           </div>
           {/* 객관식 옵션 */}
           <div className="space-y-2">
-            {['옵션 1', '옵션 2', '옵션 3', '옵션 4'].map((option, index) => (
+            {quizQuestions[currentQuestion - 1].options.map((option, index) => (
               <button
                 key={index}
                 onClick={() => handleOptionSelect(index)}

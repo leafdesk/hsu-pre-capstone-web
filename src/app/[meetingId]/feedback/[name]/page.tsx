@@ -14,6 +14,77 @@ const FeedbackPage = () => {
 
   const displayName = name.charAt(0).toUpperCase() + name.slice(1)
 
+  // 각 팀원에 대한 상세 피드백 내용
+  const feedbackDetails = {
+    김정훈: {
+      summary:
+        '전반적으로 중립적인 감정(79.3%)을 유지하며 회의를 진행했습니다.',
+      details: [
+        '회의 진행 시 감정 변화가 적절히 통제되어 있습니다.',
+        '슬픔(10.2%)과 행복(10.2%) 감정이 균형있게 나타났습니다.',
+        '안정적인 감정 상태로 회의를 이끌었습니다.',
+      ],
+      suggestions: [
+        '회의 진행 시 더 많은 긍정적 피드백을 제공하면 좋을 것 같습니다.',
+        '참가자들의 의견을 더 활발히 이끌어내는 것을 권장합니다.',
+        '진행자로서 더 적극적인 리드를 보여주면 좋겠습니다.',
+      ],
+      video: '/videos/meeting1_speaker1.mp4', // 개별 영상 URL
+    },
+    조민서: {
+      summary:
+        '중립적 감정(64.7%)이 주를 이루며, 슬픔(32.3%)이 다소 높게 나타났습니다.',
+      details: [
+        '프로젝트 진행 상황에 대한 우려가 감정에 반영된 것으로 보입니다.',
+        '긍정적 감정(2.7%)이 상대적으로 낮게 나타났습니다.',
+        '전반적으로 신중하고 진지한 태도를 보였습니다.',
+      ],
+      suggestions: [
+        '팀 내 소통을 더 활발히 하여 우려사항을 해소하는 것이 좋겠습니다.',
+        '성과에 대한 긍정적 인식을 높일 필요가 있습니다.',
+        '동료들과의 적극적인 의견 교환을 권장합니다.',
+      ],
+      video: '/videos/meeting1_speaker2.mp4', // 개별 영상 URL
+    },
+    이상건: {
+      summary:
+        '중립적 감정(74.2%)이 주를 이루며, 긍정적인 참여도를 보였습니다.',
+      details: [
+        '회의 중 안정적인 감정 상태를 유지했습니다.',
+        '행복감(6.4%)과 슬픔(19.2%)이 적절히 표현되었습니다.',
+        '프로젝트에 대한 책임감이 감정에 반영되었습니다.',
+      ],
+      suggestions: [
+        '기술적 의견 제시 시 더 자신감 있는 태도를 보여주면 좋겠습니다.',
+        '팀원들과의 협업 과정에서 더 적극적인 소통을 권장합니다.',
+        '본인의 전문성을 더 잘 활용할 수 있는 방안을 고려해보세요.',
+      ],
+      video: '/videos/meeting1_speaker4.mp4', // 개별 영상 URL
+    },
+    오승민: {
+      summary:
+        '중립(57.5%)과 행복(42.0%) 감정이 주를 이루며, 매우 긍정적인 참여를 보였습니다.',
+      details: [
+        '높은 비율의 긍정적 감정이 표현되었습니다.',
+        '회의 참여에 대한 열정이 감정에 잘 반영되었습니다.',
+        '약간의 불안(0.2%)도 관찰되었으나 매우 미미한 수준입니다.',
+      ],
+      suggestions: [
+        '긍정적인 태도를 유지하면서 더 구체적인 의견 제시를 해보세요.',
+        '다른 팀원들의 우려사항에 대해 더 공감하는 자세를 보여주면 좋겠습니다.',
+        '프로젝트 완수에 대한 자신감을 팀원들과 더 공유해주세요.',
+      ],
+      video: '/videos/meeting1_speaker3.mp4', // 개별 영상 URL
+    },
+  }
+
+  const feedback = feedbackDetails[displayName] || {
+    summary: '피드백이 없습니다.',
+    details: [],
+    suggestions: [],
+    video: '', // 기본 영상 URL
+  }
+
   return (
     <div className="max-w-7xl mx-auto py-6 px-6">
       <div className="bg-white shadow border rounded-lg p-6">
@@ -32,20 +103,42 @@ const FeedbackPage = () => {
           </h3>
           <div className="bg-white p-6 shadow-sm border rounded-lg ">
             {/* 예시 차트 및 피드백 상세 내용 */}
-            <h3 className="font-medium text-gray-700 mb-2">Feedback Start</h3>
-            <div className="h-64 bg-gray-100 shadow-lg rounded-lg mb-4 flex items-center justify-center">
-              <span>예시 차트</span>
-            </div>
-            <p className="text-gray-700">
-              {displayName}님에 대한 상세 피드백입니다.
-              <br></br>
-              <br></br>
-              <span className="text-sm text-gray-500">
-                {/* 이 부분에 동적으로 피드백이 작성됨.*/}
-                회의 중 {displayName}님의 발언 및 성과에 대한 구체적인 데이터와
-                차트, 인사이트를 제공하여 종합적인 내용을 보여줄 수 있습니다.
-              </span>
-            </p>
+            <h3 className="font-medium text-gray-700 mb-2">Feedback Summary</h3>
+            <p className="text-gray-700">{feedback.summary}</p>
+            <h4 className="font-medium text-gray-700 mt-4">상세 내용:</h4>
+            <ul className="list-disc pl-5">
+              {feedback.details.map((detail, index) => (
+                <li key={index} className="text-gray-700">
+                  {detail}
+                </li>
+              ))}
+            </ul>
+            <h4 className="font-medium text-gray-700 mt-4">제안 사항:</h4>
+            <ul className="list-disc pl-5">
+              {feedback.suggestions.map((suggestion, index) => (
+                <li key={index} className="text-gray-700">
+                  {suggestion}
+                </li>
+              ))}
+            </ul>
+            {/* 개별 영상 섹션 */}
+            {feedback.video && (
+              <div className="mt-6">
+                <h4 className="font-medium text-gray-700 mb-2">
+                  개별 영상 다시 보기
+                </h4>
+                <div className="flex justify-center">
+                  <video
+                    className="w-4/5 h-auto rounded-lg shadow-lg"
+                    controls
+                    src={feedback.video}
+                    title={`${displayName}의 회의 영상`}
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            )}
           </div>
           <div className="flex justify-between mt-6">
             {/* 뒤로가기 링크 */}
@@ -53,7 +146,7 @@ const FeedbackPage = () => {
               href={`/${meetingId}/feedback`}
               className="bg-white py-2 px-4 rounded-lg shadow-sm hover:bg-gray-100 text-sm"
             >
-              &larr;
+              &larr; 뒤로가기
             </Link>
           </div>
         </div>
