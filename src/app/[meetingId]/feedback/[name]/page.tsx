@@ -16,7 +16,7 @@ const FeedbackPage = () => {
 
   return (
     <div className="max-w-7xl mx-auto py-6 px-6">
-      <div className="bg-white shadow rounded-lg p-6">
+      <div className="bg-white shadow border rounded-lg p-6">
         {/* 헤더 섹션 */}
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-semibold text-gray-800">
@@ -30,10 +30,10 @@ const FeedbackPage = () => {
           <h3 className="font-medium text-gray-700 mb-2">
             {displayName}님에 대한 상세 피드백
           </h3>
-          <div className="bg-gray-100 p-6 rounded-lg shadow-sm">
+          <div className="bg-white p-6 shadow-sm border rounded-lg ">
             {/* 예시 차트 및 피드백 상세 내용 */}
             <h3 className="font-medium text-gray-700 mb-2">Feedback Start</h3>
-            <div className="h-64 bg-gray-300 rounded-lg mb-4 flex items-center justify-center">
+            <div className="h-64 bg-gray-100 shadow-lg rounded-lg mb-4 flex items-center justify-center">
               <span>예시 차트</span>
             </div>
             <p className="text-gray-700">
@@ -51,9 +51,9 @@ const FeedbackPage = () => {
             {/* 뒤로가기 링크 */}
             <Link
               href={`/${meetingId}/feedback`}
-              className="bg-gray-300 py-2 px-4 rounded-lg shadow hover:bg-gray-400 text-sm"
+              className="bg-white py-2 px-4 rounded-lg shadow-sm hover:bg-gray-100 text-sm"
             >
-              &larr;pn
+              &larr;
             </Link>
           </div>
         </div>
