@@ -3,6 +3,7 @@
 import { useRouter, useParams } from 'next/navigation'
 import { useState } from 'react'
 import { Layout } from 'lucide-react'
+import { useUser } from '@/context/user-context'
 
 /**
  * 레이아웃 사이드 바.
@@ -10,6 +11,7 @@ import { Layout } from 'lucide-react'
 const LayoutSideBar = () => {
   const router = useRouter()
   const params = useParams()
+  const { username, setUsername } = useUser()
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false)
 
   const handleProfileClick = () => {
@@ -52,7 +54,7 @@ const LayoutSideBar = () => {
             onClick={handleProfileClick}
           ></button>
           <div>
-            <p className="font-medium text-gray-700">Username</p>
+            <p className="font-medium text-gray-700">{username}</p>
             <button
               onClick={openLogoutModal}
               className="text-sm text-yellow-600 hover:underline"

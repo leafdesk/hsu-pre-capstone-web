@@ -11,6 +11,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js'
+import EmotionPieChart from './emotion-pie-chart' // EmotionPieChart 컴포넌트 import
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
@@ -124,6 +125,14 @@ const FeedbackPage = () => {
     ],
   }
 
+  // 감정 데이터
+  const feedbackDetails = {
+    김정훈: { neutral: 79.3, sad: 10.2, angry: 5.0, happy: 5.5 },
+    조민서: { neutral: 64.7, sad: 32.3, angry: 1.0, happy: 2.0 },
+    이상건: { neutral: 74.2, sad: 19.2, angry: 3.0, happy: 3.6 },
+    오승민: { neutral: 57.5, sad: 1.2, angry: 1.0, happy: 40.3 },
+  }
+
   return (
     <div className="max-w-7xl mx-auto py-6 px-6">
       <div className="bg-white shadow-lg rounded-lg p-6 border">
@@ -133,6 +142,8 @@ const FeedbackPage = () => {
           </h2>
           <span className="text-sm text-gray-500">2024.10.07</span>
         </div>
+
+        {/* Card 1 */}
         <div className="space-y-4">
           <div className="flex">
             {/* 차트 섹션 */}
@@ -169,6 +180,17 @@ const FeedbackPage = () => {
               </ul>
             </div>
           </div>
+        </div>
+
+        {/* 감정 퍼센트 차트 추가 */}
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+          {Object.entries(feedbackDetails).map(([userName, emotions]) => (
+            <EmotionPieChart
+              key={userName}
+              userName={userName}
+              emotions={emotions}
+            />
+          ))}
         </div>
       </div>
     </div>

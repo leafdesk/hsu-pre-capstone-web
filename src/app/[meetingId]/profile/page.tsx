@@ -1,62 +1,29 @@
 'use client'
 
-import { useParams, useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useRouter, useParams } from 'next/navigation'
+import { useUser } from '@/context/user-context' // UserContext import
 
-/**
- * 회원가입 정보 수정 페이지
- */
 const ProfilePage = () => {
-  const params = useParams() // meetingId 가져오기
-  const router = useRouter() // 페이지 이동을 위한 라우터
-  const meetingId = params.meetingId
-
-  const [userData, setUserData] = useState({
-    name: '홍길동',
-    email: 'example@example.com',
-    password: '',
-  })
-
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const router = useRouter()
+  const params = useParams() // Extract params
+  const { username, setUsername } = useUser() // 사용자 이름과 설정 함수 가져오기
+  const [name, setName] = useState(username) // 상태로 사용자 이름 관리
+  const [isSubmitting, setIsSubmitting] = useState(false) // 제출 상태 관리
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setUserData((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
+    setName(e.target.value)
   }
 
-  const handleFormSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
-
-    try {
-      // API 요청
-      const response = await fetch('/api/update-profile', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userData),
-      })
-
-      if (!response.ok) {
-        throw new Error('프로필 업데이트 실패')
-      }
-
-      alert('프로필이 성공적으로 업데이트되었습니다.')
-    } catch (error) {
-      console.error(error)
-      alert('프로필 업데이트 중 오류가 발생했습니다.')
-    } finally {
-      setIsSubmitting(false)
-    }
+    setIsSubmitting(true) // 제출 시작
+    setUsername(name) // 사용자 이름 업데이트
+    router.push(`/${params.meetingId}/summary`) // 요약 페이지로 이동
   }
 
-  // 취소 버튼 클릭 핸들러
   const handleCancel = () => {
-    router.push(`/${meetingId}/summary`) // 취소 시 메인 페이지로 이동 (예: /1)
+    router.push(`/${params.meetingId}/summary`) // 취소 시 요약 페이지로 이동
   }
 
   return (
@@ -71,12 +38,14 @@ const ProfilePage = () => {
           ✕
         </button>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+        <h2 className="text-3xl font-semibold text-gray-800 mb-6">
           프로필 수정
         </h2>
-        <p className="text-gray-600 mb-8">아래 정보를 수정하고 저장하세요.</p>
+        <p className="text-gray-600 mb-8 text-lg">
+          아래 정보를 수정하고 저장하세요.
+        </p>
 
-        <form onSubmit={handleFormSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
           {/* 이름 입력 */}
           <div>
             <label
@@ -89,9 +58,9 @@ const ProfilePage = () => {
               type="text"
               id="name"
               name="name"
-              value={userData.name}
+              value={name}
               onChange={handleInputChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-lg"
               required
             />
           </div>
@@ -108,9 +77,7 @@ const ProfilePage = () => {
               type="email"
               id="email"
               name="email"
-              value={userData.email}
-              onChange={handleInputChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-lg"
               required
             />
           </div>
@@ -127,9 +94,7 @@ const ProfilePage = () => {
               type="password"
               id="password"
               name="password"
-              value={userData.password}
-              onChange={handleInputChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-lg"
               required
             />
           </div>

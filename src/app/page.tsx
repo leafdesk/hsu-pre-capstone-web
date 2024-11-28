@@ -1,33 +1,17 @@
 'use client'
 
-import Image from 'next/image'
+import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
 const RootPage = () => {
   const router = useRouter()
 
-  return (
-    <div className="flex flex-col items-center space-y-4 p-10">
-      <button
-        onClick={() => router.push('/quiz')}
-        className="bg-blue-500 text-white rounded-lg px-6 py-3 shadow-md hover:bg-blue-600 transition duration-300"
-      >
-        퀴즈
-      </button>
-      <button
-        onClick={() => router.push('/summary')}
-        className="bg-green-500 text-white rounded-lg px-6 py-3 shadow-md hover:bg-green-600 transition duration-300"
-      >
-        요약본
-      </button>
-      <button
-        onClick={() => router.push('/feedback')}
-        className="bg-purple-500 text-white rounded-lg px-6 py-3 shadow-md hover:bg-purple-600 transition duration-300"
-      >
-        피드백
-      </button>
-    </div>
-  )
+  useEffect(() => {
+    // 컴포넌트가 마운트될 때 /meeting으로 리디렉션
+    router.push('/meeting')
+  }, [router])
+
+  return null // 렌더링할 내용이 없으므로 null 반환
 }
 
 export default RootPage
