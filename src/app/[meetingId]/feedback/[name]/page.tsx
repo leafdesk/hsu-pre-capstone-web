@@ -30,7 +30,7 @@ const FeedbackPage = () => {
         '진행자로서 더 적극적인 리드를 보여주면 좋겠습니다.',
       ],
       video:
-        'https://uc13f16ca77f90f9c9e3e16e0729.dl.dropboxusercontent.com/cd/0/inline/CfNBZF8_v_qN_P851IYil3x_hCz5e4T_HfWzSsa3uSyK_40GbYUNj-U0RoESnrR0Mf1j5maK11HP0i_93Vbz30j-nUpTzzo1xmI-avvJda08ZmQCViJ3YEE_nv8QZsJ-1SQJM1aDGmBjNlePFGetEvyu/file#', // 개별 영상 URL
+        'https://uc695d43e37de72010b19c41d2dd.dl.dropboxusercontent.com/cd/0/inline/CfMpjgWMJJ9MmFtNOmWhxxOiJT2LSFrXePrplVYRswedxthB7u5NbaVfsy9g4wGD55m-YiAuJ9NEF6QxYxLuZSeRbailznbvp7FJqiZstyvscLMnuF8tG9i1qBC3Fz3BxR3dqZF9OaZVB-WL0TKrYTa6/file#', // 개별 영상 URL
     },
     조민서: {
       summary:
@@ -46,7 +46,7 @@ const FeedbackPage = () => {
         '동료들과의 적극적인 의견 교환을 권장합니다.',
       ],
       video:
-        'https://uced2691f93299a1208cfffc1969.dl.dropboxusercontent.com/cd/0/inline/CfJLRBHfc1UNXrcfivecao2UPjWpjPjx1X3X5MHF-Xx4T-juSQkpSpbel-R8pyvYv9wgp7inXhDH8vOqeufgBaNjdcNPhlYVzRv5tCyjNllD4OWtLkZvsjiP3MXmEyuHHfo1EJZuHM7AgWlT_SnDcrld/file#', // 개별 영상 URL
+        'https://ucf74b57c7820b4e79c278934a91.dl.dropboxusercontent.com/cd/0/inline/CfPLF5qCLSFjgp2_iniS9D3dji8hmXY8mPIqWGHtJnglKuiAB_lfiFQ-ZK8c_eQsUdRXWPk-kcnmGwb2xL3srHKtzBCB2W-s15hLHW_buXSiB0KabFsF1nnQBbdE2h3T8whSEUGnvzeKVed4pkCWcITq/file#', // 개별 영상 URL
     },
     이상건: {
       summary:
@@ -62,7 +62,7 @@ const FeedbackPage = () => {
         '본인의 전문성을 더 잘 활용할 수 있는 방안을 고려해보세요.',
       ],
       video:
-        'https://ucac1cf361c5084b35d0deccafb9.dl.dropboxusercontent.com/cd/0/inline/CfNHQbmFaI6sz8l1n-5UoAM1maVxhdcG7r9fL0UEQIaJ06B9gBXAul7suyn-D0FYvDbDNMUjsEYcK2zfRhXNEU2f0oUngz3hsMPrBnolsRmeenpm4sfZW70o8ENab43sf3Kz0IwUIgC5V87vPfNo5Kug/file#', // 개별 영상 URL
+        'https://uc7c60cbde30953040011077e4e7.dl.dropboxusercontent.com/cd/0/inline/CfMF6M_y3-1CmUYMrNojhnNotLb16t8LEgNa48MWTMNAfRi-7kCtah_acB1XqYGtM4zeF2X6jP2jlk0MR37hAAN2bhgI6cmAFmOBxJ_z79ecQZMnvkEQBxP2OvtivV3m92VYd1u521kXK_HTW67z-YPJ/file#', // 개별 영상 URL
     },
     오승민: {
       summary:
@@ -78,7 +78,7 @@ const FeedbackPage = () => {
         '프로젝트 완수에 대한 자신감을 팀원들과 더 공유해주세요.',
       ],
       video:
-        'https://ucb908f0489ba2c605d4c62cbef5.dl.dropboxusercontent.com/cd/0/inline/CfJe6cEFLVq_Sk1OEEfRS460EYZKJoKUbtBZk1aFD4_DoXRrIOJMkF3tajIh6z3LoBtaRydXMZS2XdtwoKsmliSchUcKBraL-BR23RLL6q57VD3FDJmnI-WiNmq7aHkVH7LCoWP3gPNvXzcbKVNxA0Q-/file#', // 개별 영상 URL
+        'https://uc7fa050496097681ad2b7191d97.dl.dropboxusercontent.com/cd/0/inline/CfPojuOf6T5nY3Pq_i4wC1JMHq31oiaEuDiAyNLTLEJEnm1zlLw0P9tRY9JsZ_dzH5A7KrrYuqd6Nza1bkECVkjHlXFVLtIBfYTF8K73kGKPCjM6YIHaO_V88rZ_oYwABcg6RWjreNWqVmVK6rpdPXZI/file#', // 개별 영상 URL
     },
   }
 
