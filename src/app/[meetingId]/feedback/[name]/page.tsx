@@ -29,7 +29,8 @@ const FeedbackPage = () => {
         '참가자들의 의견을 더 활발히 이끌어내는 것을 권장합니다.',
         '진행자로서 더 적극적인 리드를 보여주면 좋겠습니다.',
       ],
-      video: '/videos/meeting1_speaker1.mp4', // 개별 영상 URL
+      video:
+        'https://uc13f16ca77f90f9c9e3e16e0729.dl.dropboxusercontent.com/cd/0/inline/CfNBZF8_v_qN_P851IYil3x_hCz5e4T_HfWzSsa3uSyK_40GbYUNj-U0RoESnrR0Mf1j5maK11HP0i_93Vbz30j-nUpTzzo1xmI-avvJda08ZmQCViJ3YEE_nv8QZsJ-1SQJM1aDGmBjNlePFGetEvyu/file#', // 개별 영상 URL
     },
     조민서: {
       summary:
@@ -60,7 +61,8 @@ const FeedbackPage = () => {
         '팀원들과의 협업 과정에서 더 적극적인 소통을 권장합니다.',
         '본인의 전문성을 더 잘 활용할 수 있는 방안을 고려해보세요.',
       ],
-      video: '/videos/meeting1_speaker4.mp4', // 개별 영상 URL
+      video:
+        'https://ucac1cf361c5084b35d0deccafb9.dl.dropboxusercontent.com/cd/0/inline/CfNHQbmFaI6sz8l1n-5UoAM1maVxhdcG7r9fL0UEQIaJ06B9gBXAul7suyn-D0FYvDbDNMUjsEYcK2zfRhXNEU2f0oUngz3hsMPrBnolsRmeenpm4sfZW70o8ENab43sf3Kz0IwUIgC5V87vPfNo5Kug/file#', // 개별 영상 URL
     },
     오승민: {
       summary:

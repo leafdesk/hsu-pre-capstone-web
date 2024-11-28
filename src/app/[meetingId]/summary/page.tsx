@@ -50,7 +50,6 @@ const SummaryPage = () => {
           <video
             className="w-4/5 h-auto rounded-lg shadow-lg"
             controls
-            // src="/videos/meeting1.mp4"
             src="https://uc3044e50515d9e91741bdd08e80.dl.dropboxusercontent.com/cd/0/inline/CfKidjpK4Hd_J8_MaMRO6BHunIvB9BM2ucnezzuIYXeM10jXbGz28jnnkX-bPJq3FhDk7AQkt0hoKAvRk6m3N5UZDiVv8I2pynPGh2OnueyLsUHWQmmu8hRUiJ5S1quHmFHwWNL6aMLXNfPLDXyxtGCv/file#"
             title="회의 영상"
           >
