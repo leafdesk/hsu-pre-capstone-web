@@ -43,7 +43,7 @@ const SummaryPage = () => {
     <div className="max-w-7xl mx-auto py-6 px-6">
       {/* 회의 영상 다시 보기 섹션 */}
       <div className="mb-6">
-        <h3 className="font-medium text-gray-700 mb-2">회의 영상 다시 보기</h3>
+        <h3 className="font-medium text-black mb-2">회의 영상 다시 보기</h3>
         <br />
 
         <div className="flex justify-center">
@@ -67,8 +67,8 @@ const SummaryPage = () => {
         </div>
         <div className="space-y-4">
           <div>
-            <h3 className="font-medium text-gray-700 mb-2">Summary:</h3>
-            <ol className="list-decimal list-inside space-y-2 text-gray-600">
+            <h3 className="font-medium text-black mb-2">Summary:</h3>
+            <ol className="list-decimal list-inside space-y-2 text-black">
               {meetingSummary.mainPoints.map((point, index) => (
                 <li key={index}>
                   {point.topic}: {point.content.join(', ')}

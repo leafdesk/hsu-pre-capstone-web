@@ -106,14 +106,14 @@ const FeedbackPage = () => {
 
         {/* 상세 피드백 섹션 */}
         <div className="space-y-4">
-          <h3 className="font-medium text-gray-700 mb-2">
+          <h3 className="font-medium text-black mb-2">
             {displayName}님에 대한 상세 피드백
           </h3>
           <div className="bg-white p-6 shadow-sm border rounded-lg ">
             {/* 예시 차트 및 피드백 상세 내용 */}
             <h3 className="font-medium text-gray-700 mb-2">Feedback Summary</h3>
-            <p className="text-gray-700">{feedback.summary}</p>
-            <h4 className="font-medium text-gray-700 mt-4">상세 내용:</h4>
+            <p className="text-black">{feedback.summary}</p>
+            <h4 className="font-medium text-black mt-4">상세 내용:</h4>
             <ul className="list-disc pl-5">
               {feedback.details.map((detail, index) => (
                 <li key={index} className="text-gray-700">
@@ -121,7 +121,7 @@ const FeedbackPage = () => {
                 </li>
               ))}
             </ul>
-            <h4 className="font-medium text-gray-700 mt-4">제안 사항:</h4>
+            <h4 className="font-medium text-black mt-4">제안 사항:</h4>
             <ul className="list-disc pl-5">
               {feedback.suggestions.map((suggestion, index) => (
                 <li key={index} className="text-gray-700">
@@ -132,7 +132,7 @@ const FeedbackPage = () => {
             {/* 개별 영상 섹션 */}
             {feedback.video && (
               <div className="mt-6">
-                <h4 className="font-medium text-gray-700 mb-2">
+                <h4 className="font-medium text-black mb-2">
                   개별 영상 다시 보기
                 </h4>
                 <div className="flex justify-center">

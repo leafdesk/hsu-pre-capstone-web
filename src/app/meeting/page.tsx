@@ -75,17 +75,19 @@ const StartPage = () => {
         </h2>
 
         {/* 기능 강조 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto text-left text-gray-600">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto text-left text-gray-600 mt-8">
+          {' '}
+          {/* 간격 추가 */}
           <div className="flex items-center space-x-2">
-            <span className="text-yellow-500 text-2xl font-bold">✓</span>
-            <p>
+            <span className="text-yellow-500 text-xl font-bold">✓</span>
+            <p className="text-base sm:text-lg md:text-xl">
               <span className="font-semibold text-black">자동 회의 요약:</span>{' '}
               AI가 회의 영상을 요약하여 시간 절약
             </p>
           </div>
           <div className="flex items-center space-x-2">
-            <span className="text-yellow-500 text-2xl font-bold">✓</span>
-            <p>
+            <span className="text-yellow-500 text-xl font-bold">✓</span>
+            <p className="text-base sm:text-lg md:text-xl">
               <span className="font-semibold text-black">
                 참여자 태도 분석:
               </span>{' '}
@@ -93,15 +95,15 @@ const StartPage = () => {
             </p>
           </div>
           <div className="flex items-center space-x-2">
-            <span className="text-yellow-500 text-2xl font-bold">✓</span>
-            <p>
+            <span className="text-yellow-500 text-xl font-bold">✓</span>
+            <p className="text-base sm:text-lg md:text-xl">
               <span className="font-semibold text-black">퀴즈 기능:</span> 회의
               내용 이해도를 평가하여 학습 효과 극대화
             </p>
           </div>
           <div className="flex items-center space-x-2">
-            <span className="text-yellow-500 text-2xl font-bold">✓</span>
-            <p>
+            <span className="text-yellow-500 text-xl font-bold">✓</span>
+            <p className="text-base sm:text-lg md:text-xl">
               <span className="font-semibold text-black">팀 성과 향상:</span>{' '}
               데이터 기반 회의 분석으로 더 나은 결과 도출
             </p>
@@ -109,10 +111,12 @@ const StartPage = () => {
         </div>
 
         {/* 버튼 */}
-        <div className="flex space-x-4 justify-center mt-10">
+        <div className="flex space-x-4 justify-center mt-12">
+          {' '}
+          {/* 버튼 위 간격 조정 */}
           <button
             onClick={handleStartClick}
-            className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-full font-semibold"
+            className="bg-yellow-500 hover:bg-yellow-600 text-black px-10 py-4 rounded-full font-semibold text-xl sm:text-2xl"
           >
             시작하기
           </button>
