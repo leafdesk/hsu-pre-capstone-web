@@ -1,40 +1,25 @@
 import axios from 'axios'
 
 /**
+ * Swagger UI 가상 서버 URL. (테스트)
+ */
+const SWAGGER_SERVER_URL =
+  'https://virtserver.swaggerhub.com/LSG001008_1/Test/1.0.0'
+
+/**
+ * 서버 URL. (운영계)
+ */
+const SERVER_URL = 'http://43.203.122.230'
+
+/**
  * API 클라이언트.
  */
 const client = axios.create({
-  baseURL: 'https://virtserver.swaggerhub.com/LSG001008_1/Test/1.0.0',
+  baseURL: SERVER_URL,
   headers: {
     'Content-Type': 'application/json',
   },
 })
-
-interface Meeting {
-  meeting_id: number
-  title: string
-  meeting_date: string
-  participants: string
-  video_url: string
-  summary: string
-}
-
-interface Feedback {
-  meeting_id: number
-  user_id: number
-  motion_recognition: string
-  gesture_recognition: string
-  pitch_frequency_analysis: string
-  feedback: string
-}
-
-interface Quiz {
-  quiz_id: number
-  meeting_id: number
-  question: string
-  options: string[]
-  correct_answer: number
-}
 
 /**
  * 회의 데이터 조회. (요약본)
@@ -63,4 +48,30 @@ export const getUserFeedback = async (
 export const getQuizInfo = async (meetingId: number): Promise<Quiz> => {
   const response = await client.get<Quiz>(`/api/quizzes/${meetingId}`)
   return response.data
+}
+
+interface Meeting {
+  meeting_id: number
+  title: string
+  meeting_date: string
+  participants: string
+  video_url: string
+  summary: string
+}
+
+interface Feedback {
+  meeting_id: number
+  user_id: number
+  motion_recognition: string
+  gesture_recognition: string
+  pitch_frequency_analysis: string
+  feedback: string
+}
+
+interface Quiz {
+  quiz_id: number
+  meeting_id: number
+  question: string
+  options: string[]
+  correct_answer: number
 }
