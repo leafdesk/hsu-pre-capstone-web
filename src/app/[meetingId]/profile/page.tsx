@@ -71,17 +71,19 @@ const ProfilePage = () => {
           ✕
         </button>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+        <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
           프로필 수정
         </h2>
-        <p className="text-gray-600 mb-8">아래 정보를 수정하고 저장하세요.</p>
+        <p className="text-gray-600 mb-8 text-center text-lg">
+          아래 정보를 수정하고 저장하세요.
+        </p>
 
-        <form onSubmit={handleFormSubmit} className="space-y-6">
+        <form onSubmit={handleFormSubmit} className="space-y-8">
           {/* 이름 입력 */}
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-lg font-medium text-gray-700 mb-2"
             >
               이름
             </label>
@@ -91,7 +93,7 @@ const ProfilePage = () => {
               name="name"
               value={userData.name}
               onChange={handleInputChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+              className="mt-1 block w-full rounded-lg border-gray-300 shadow-md focus:border-blue-500 focus:ring-blue-500 text-lg"
               required
             />
           </div>
@@ -100,7 +102,7 @@ const ProfilePage = () => {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-lg font-medium text-gray-700 mb-2"
             >
               이메일
             </label>
@@ -110,7 +112,7 @@ const ProfilePage = () => {
               name="email"
               value={userData.email}
               onChange={handleInputChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+              className="mt-1 block w-full rounded-lg border-gray-300 shadow-md focus:border-blue-500 focus:ring-blue-500 text-lg"
               required
             />
           </div>
@@ -119,7 +121,7 @@ const ProfilePage = () => {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-lg font-medium text-gray-700 mb-2"
             >
               비밀번호
             </label>
@@ -129,7 +131,7 @@ const ProfilePage = () => {
               name="password"
               value={userData.password}
               onChange={handleInputChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+              className="mt-1 block w-full rounded-lg border-gray-300 shadow-md focus:border-blue-500 focus:ring-blue-500 text-lg"
               required
             />
           </div>
@@ -137,9 +139,9 @@ const ProfilePage = () => {
           {/* 저장 버튼 */}
           <button
             type="submit"
-            className={`w-full py-2 px-4 rounded-lg text-black ${
+            className={`w-full py-3 px-6 rounded-lg text-lg font-semibold text-white ${
               isSubmitting
-                ? 'bg-yellow-400 cursor-not-allowed'
+                ? 'bg-gray-400 cursor-not-allowed'
                 : 'bg-yellow-500 hover:bg-yellow-600'
             }`}
             disabled={isSubmitting}

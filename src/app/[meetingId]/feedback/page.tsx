@@ -138,7 +138,7 @@ const FeedbackPage = () => {
             {/* 차트 섹션 */}
             <div className="flex-1 bg-white p-4 rounded-lg mr-4">
               {/* 차트 */}
-              <div className="text-center font-medium text-gray-600 mb-4">
+              <div className="text-center font-medium text-black mb-4">
                 참여자별 발언 시간
               </div>
               {/* 차트 예시 */}
@@ -157,11 +157,11 @@ const FeedbackPage = () => {
                   <li key={index} className="flex items-center space-x-4">
                     <button
                       onClick={() => handleButtonClick(participant.name)}
-                      className="text-gray-900 bg-gray-100 px-3 py-1.5 border border-gray-300 rounded-md min-w-20 hover:bg-gray-200 hover:shadow-md hover:scale-105 transition-transform duration-200 ease-out"
+                      className="text-black bg-gray-100 px-3 py-1.5 border border-gray-300 rounded-md min-w-20 hover:bg-gray-200 hover:shadow-md hover:scale-105 transition-transform duration-200 ease-out"
                     >
                       {participant.name}
                     </button>
-                    <p className="text-gray-600">
+                    <p className="text-black">
                       {participant.feedback.emotion.summary}
                     </p>
                   </li>
