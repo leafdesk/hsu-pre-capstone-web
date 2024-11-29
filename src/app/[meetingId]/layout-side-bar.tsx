@@ -80,7 +80,7 @@ const LayoutSideBar = () => {
   const meetings = [
     { id: 1, name: '13주차 프로젝트 진행상황 점검 회의', icon: Layout },
     { id: 2, name: '프리캡스톤 전시회 준비 회의', icon: Layout },
-    { id: 3, name: '프리캡스톤 전시회 준비 회의', icon: Layout },
+    { id: 3, name: '크리스마스 및 연말 일정 관련 회의', icon: Layout },
     // { id: 4, name: 'temp', icon: Layout },
   ]
 
