@@ -30,7 +30,7 @@ const FeedbackPage = () => {
         '진행자로서 더 적극적인 리드를 보여주면 좋겠습니다.',
       ],
       video:
-        'https://uc695d43e37de72010b19c41d2dd.dl.dropboxusercontent.com/cd/0/inline/CfMpjgWMJJ9MmFtNOmWhxxOiJT2LSFrXePrplVYRswedxthB7u5NbaVfsy9g4wGD55m-YiAuJ9NEF6QxYxLuZSeRbailznbvp7FJqiZstyvscLMnuF8tG9i1qBC3Fz3BxR3dqZF9OaZVB-WL0TKrYTa6/file#', // 개별 영상 URL
+        'https://leafdesk-bucket-1.s3.ap-northeast-2.amazonaws.com/vmc/meeting1_speaker1.mp4', // 개별 영상 URL
     },
     조민서: {
       summary:
@@ -82,11 +82,150 @@ const FeedbackPage = () => {
     },
   }
 
+  const feedbackDetails2 = {
+    김정훈: {
+      summary:
+        '중립적 감정(52.78%)이 주를 이루며, 행복(11.12%)이 다소 높게 나타났습니다.',
+      details: [
+        '회의 중 행복이 증가한 것은 프로젝트 진행 상황에 대한 긍정적 기대가 반영된 것으로 보입니다.',
+        '슬픔(12.56%)이 상대적으로 낮게 나타났습니다.',
+        '전반적으로 긍정적이고 열린 태도를 보였습니다.',
+      ],
+      suggestions: [
+        '팀 내 소통을 더 활발히 하여 긍정적 에너지를 공유하는 것이 좋겠습니다.',
+        '성과에 대한 긍정적 인식을 높일 필요가 있습니다.',
+        '동료들과의 적극적인 의견 교환을 권장합니다.',
+      ],
+      video:
+        'https://leafdesk-bucket-1.s3.ap-northeast-2.amazonaws.com/vmc/meeting2_speaker1.mp4', // 비워둠
+    },
+    조민서: {
+      summary:
+        '중립적 감정(48.12%)이 주를 이루며, 행복(12.35%)이 다소 높게 나타났습니다.',
+      details: [
+        '회의 중 행복이 증가한 것은 프로젝트 진행 상황에 대한 긍정적 기대가 반영된 것으로 보입니다.',
+        '슬픔(20.49%)이 상대적으로 낮게 나타났습니다.',
+        '전반적으로 긍정적이고 열린 태도를 보였습니다.',
+      ],
+      suggestions: [
+        '팀 내 소통을 더 활발히 하여 긍정적 에너지를 공유하는 것이 좋겠습니다.',
+        '성과에 대한 긍정적 인식을 높일 필요가 있습니다.',
+        '동료들과의 적극적인 의견 교환을 권장합니다.',
+      ],
+      video:
+        'https://leafdesk-bucket-1.s3.ap-northeast-2.amazonaws.com/vmc/meeting2_speaker2.mp4', // 비워둠
+    },
+    이상건: {
+      summary:
+        '중립적 감정(50.12%)이 주를 이루며, 슬픔(18.23%)이 다소 높게 나타났습니다.',
+      details: [
+        '회의 중 슬픔이 증가한 것은 프로젝트 진행 상황에 대한 우려가 반영된 것으로 보입니다.',
+        '긍정적 감정(13.99%)이 상대적으로 낮게 나타났습니다.',
+        '전반적으로 신중하고 진지한 태도를 보였습니다.',
+      ],
+      suggestions: [
+        '팀 내 소통을 더 활발히 하여 우려사항을 해소하는 것이 좋겠습니다.',
+        '성과에 대한 긍정적 인식을 높일 필요가 있습니다.',
+        '동료들과의 적극적인 의견 교환을 권장합니다.',
+      ],
+      video:
+        'https://leafdesk-bucket-1.s3.ap-northeast-2.amazonaws.com/vmc/meeting2_speaker4.mp4', // 비워둠
+    },
+    오승민: {
+      summary:
+        '중립적 감정(41.77%)이 주를 이루며, 슬픔(24.1%)이 다소 높게 나타났습니다.',
+      details: [
+        '회의 중 슬픔이 증가한 것은 프로젝트 진행 상황에 대한 우려가 반영된 것으로 보입니다.',
+        '긍정적 감정(14.57%)이 상대적으로 낮게 나타났습니다.',
+        '전반적으로 신중하고 진지한 태도를 보였습니다.',
+      ],
+      suggestions: [
+        '팀 내 소통을 더 활발히 하여 우려사항을 해소하는 것이 좋겠습니다.',
+        '성과에 대한 긍정적 인식을 높일 필요가 있습니다.',
+        '동료들과의 적극적인 의견 교환을 권장합니다.',
+      ],
+      video:
+        'https://leafdesk-bucket-1.s3.ap-northeast-2.amazonaws.com/vmc/meeting2_speaker3.mp4', // 비워둠
+    },
+  }
+
+  const feedbackDetails3 = {
+    김정훈: {
+      summary:
+        '중립적 감정(44.46%)이 주를 이루며, 슬픔(21.23%)이 다소 높게 나타났습니다.',
+      details: [
+        '회의 중 슬픔이 증가한 것은 프로젝트 진행 상황에 대한 우려가 반영된 것으로 보입니다.',
+        '긍정적 감정(13.1%)이 상대적으로 낮게 나타났습니다.',
+        '전반적으로 신중하고 진지한 태도를 보였습니다.',
+      ],
+      suggestions: [
+        '팀 내 소통을 더 활발히 하여 우려사항을 해소하는 것이 좋겠습니다.',
+        '성과에 대한 긍정적 인식을 높일 필요가 있습니다.',
+        '동료들과의 적극적인 의견 교환을 권장합니다.',
+      ],
+      video:
+        'https://leafdesk-bucket-1.s3.ap-northeast-2.amazonaws.com/vmc/meeting3_speaker1.mp4', // 비워둠
+    },
+    조민서: {
+      summary:
+        '중립적 감정(46.54%)이 주를 이루며, 긍정적 감정(14.35%)이 상대적으로 높게 나타났습니다.',
+      details: [
+        '회의 중 긍정적 감정이 증가한 것은 프로젝트 진행 상황에 대한 긍정적 태도가 반영된 것으로 보입니다.',
+        '슬픔(19.88%)이 다소 낮게 나타났습니다.',
+        '전반적으로 신중하고 진지한 태도를 보였습니다.',
+      ],
+      suggestions: [
+        '팀 내 소통을 더 활발히 하여 긍정적 태도를 유지하는 것이 좋겠습니다.',
+        '성과에 대한 긍정적 인식을 높일 필요가 있습니다.',
+        '동료들과의 적극적인 의견 교환을 권장합니다.',
+      ],
+      video:
+        'https://leafdesk-bucket-1.s3.ap-northeast-2.amazonaws.com/vmc/meeting3_speaker2.mp4', // 비워둠
+    },
+    이상건: {
+      summary:
+        '중립적 감정(43.68%)이 주를 이루며, 긍정적 감정(14.43%)이 상대적으로 높게 나타났습니다.',
+      details: [
+        '회의 중 긍정적 감정이 증가한 것은 프로젝트 진행 상황에 대한 긍정적 태도가 반영된 것으로 보입니다.',
+        '슬픔(22.57%)이 다소 낮게 나타났습니다.',
+        '전반적으로 신중하고 진지한 태도를 보였습니다.',
+      ],
+      suggestions: [
+        '팀 내 소통을 더 활발히 하여 긍정적 태도를 유지하는 것이 좋겠습니다.',
+        '성과에 대한 긍정적 인식을 높일 필요가 있습니다.',
+        '동료들과의 적극적인 의견 교환을 권장합니다.',
+      ],
+      video:
+        'https://leafdesk-bucket-1.s3.ap-northeast-2.amazonaws.com/vmc/meeting3_speaker4.mp4', // 비워둠
+    },
+    오승민: {
+      summary:
+        '중립적 감정(65.34%)이 주를 이루며, 긍정적 감정(10.67%)이 상대적으로 낮게 나타났습니다.',
+      details: [
+        '회의 중 긍정적 감정이 감소한 것은 프로젝트 진행 상황에 대한 우려가 반영된 것으로 보입니다.',
+        '슬픔(10.67%)이 다소 낮게 나타났습니다.',
+        '전반적으로 신중하고 진지한 태도를 보였습니다.',
+      ],
+      suggestions: [
+        '팀 내 소통을 더 활발히 하여 우려사항을 해소하는 것이 좋겠습니다.',
+        '성과에 대한 긍정적 인식을 높일 필요가 있습니다.',
+        '동료들과의 적극적인 의견 교환을 권장합니다.',
+      ],
+      video:
+        'https://leafdesk-bucket-1.s3.ap-northeast-2.amazonaws.com/vmc/meeting3_speaker3.mp4', // 비워둠
+    },
+  }
+
   // Add type for valid participant names
   type ParticipantName = '김정훈' | '조민서' | '이상건' | '오승민'
 
-  // Add type assertion when accessing feedbackDetails
-  const feedback = feedbackDetails[displayName as ParticipantName] || {
+  let feedbackDetailsToUse = feedbackDetails
+  if (meetingId === '2') {
+    feedbackDetailsToUse = feedbackDetails2
+  } else if (meetingId === '3') {
+    feedbackDetailsToUse = feedbackDetails3
+  }
+  const feedback = feedbackDetailsToUse[displayName as ParticipantName] || {
     summary: '피드백이 없습니다.',
     details: [],
     suggestions: [],
