@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter, useParams } from 'next/navigation'
+import { useRouter, useParams, usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { Layout } from 'lucide-react'
 import { useUser } from '@/context/user-context'
@@ -13,6 +13,9 @@ const LayoutSideBar = () => {
   const params = useParams()
   const { username, setUsername } = useUser()
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false)
+  const pathname = usePathname()
+  const pathSegments = pathname.split('/')
+  const tab = pathSegments[2]
 
   const handleProfileClick = () => {
     const meetingId = params.meetingId
@@ -33,15 +36,15 @@ const LayoutSideBar = () => {
 
   // 회의 목록 데이터
   const meetings = [
-    { id: 1, name: '1번 회의', icon: Layout },
-    { id: 2, name: '2번 회의', icon: Layout },
-    { id: 3, name: '3번 회의', icon: Layout },
-    { id: 4, name: '4번 회의', icon: Layout },
+    { id: 1, name: '13주차 프로젝트 진행상황 점검 회의', icon: Layout },
+    { id: 2, name: '프리캡스톤 전시회 준비 회의', icon: Layout },
+    { id: 3, name: '프리캡스톤 전시회 준비 회의', icon: Layout },
+    // { id: 4, name: 'temp', icon: Layout },
   ]
 
   // 회의 목록 클릭 핸들러
   const handleMeetingClick = (meetingId: number) => {
-    router.push(`/${meetingId}/summary`) // 해당 meetingId의 summary 페이지로 이동
+    router.push(`/${meetingId}/${tab}`)
   }
 
   return (
