@@ -46,7 +46,7 @@ const FeedbackPage = () => {
         '동료들과의 적극적인 의견 교환을 권장합니다.',
       ],
       video:
-        'https://ucf74b57c7820b4e79c278934a91.dl.dropboxusercontent.com/cd/0/inline/CfPLF5qCLSFjgp2_iniS9D3dji8hmXY8mPIqWGHtJnglKuiAB_lfiFQ-ZK8c_eQsUdRXWPk-kcnmGwb2xL3srHKtzBCB2W-s15hLHW_buXSiB0KabFsF1nnQBbdE2h3T8whSEUGnvzeKVed4pkCWcITq/file#', // 개별 영상 URL
+        'https://leafdesk-bucket-1.s3.ap-northeast-2.amazonaws.com/vmc/meeting1_speaker2.mp4', // 개별 영상 URL
     },
     이상건: {
       summary:
@@ -62,7 +62,7 @@ const FeedbackPage = () => {
         '본인의 전문성을 더 잘 활용할 수 있는 방안을 고려해보세요.',
       ],
       video:
-        'https://uc7c60cbde30953040011077e4e7.dl.dropboxusercontent.com/cd/0/inline/CfMF6M_y3-1CmUYMrNojhnNotLb16t8LEgNa48MWTMNAfRi-7kCtah_acB1XqYGtM4zeF2X6jP2jlk0MR37hAAN2bhgI6cmAFmOBxJ_z79ecQZMnvkEQBxP2OvtivV3m92VYd1u521kXK_HTW67z-YPJ/file#', // 개별 영상 URL
+        'https://leafdesk-bucket-1.s3.ap-northeast-2.amazonaws.com/vmc/meeting1_speaker4.mp4', // 개별 영상 URL
     },
     오승민: {
       summary:
@@ -78,7 +78,7 @@ const FeedbackPage = () => {
         '프로젝트 완수에 대한 자신감을 팀원들과 더 공유해주세요.',
       ],
       video:
-        'https://uc7fa050496097681ad2b7191d97.dl.dropboxusercontent.com/cd/0/inline/CfPojuOf6T5nY3Pq_i4wC1JMHq31oiaEuDiAyNLTLEJEnm1zlLw0P9tRY9JsZ_dzH5A7KrrYuqd6Nza1bkECVkjHlXFVLtIBfYTF8K73kGKPCjM6YIHaO_V88rZ_oYwABcg6RWjreNWqVmVK6rpdPXZI/file#', // 개별 영상 URL
+        'https://leafdesk-bucket-1.s3.ap-northeast-2.amazonaws.com/vmc/meeting1_speaker3.mp4', // 개별 영상 URL
     },
   }
 

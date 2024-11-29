@@ -127,10 +127,22 @@ const FeedbackPage = () => {
 
   // 감정 데이터
   const feedbackDetails = {
-    김정훈: { neutral: 79.3, sad: 10.2, angry: 5.0, happy: 5.5 },
+    김정훈: { neutral: 79.36, sad: 10.29, angry: 0.0, happy: 10.27 },
     조민서: { neutral: 64.7, sad: 32.3, angry: 1.0, happy: 2.0 },
-    이상건: { neutral: 74.2, sad: 19.2, angry: 3.0, happy: 3.6 },
-    오승민: { neutral: 57.5, sad: 1.2, angry: 1.0, happy: 40.3 },
+    이상건: { neutral: 74.25, sad: 19.28, angry: 1.13, happy: 6.43 },
+    오승민: { neutral: 45.44, sad: 22.18, angry: 6.74, happy: 14.11 },
+  }
+  const feedbackDetails2 = {
+    김정훈: { neutral: 52.78, sad: 12.56, angry: 4.89, happy: 11.12 },
+    조민서: { neutral: 48.12, sad: 20.49, angry: 5.43, happy: 12.35 },
+    이상건: { neutral: 50.12, sad: 18.23, angry: 7.12, happy: 13.99 },
+    오승민: { neutral: 41.77, sad: 24.1, angry: 6.54, happy: 14.57 },
+  }
+  const feedbackDetails3 = {
+    김정훈: { neutral: 44.46, sad: 21.23, angry: 8.12, happy: 13.1 },
+    조민서: { neutral: 46.54, sad: 19.88, angry: 7.65, happy: 14.35 },
+    이상건: { neutral: 43.68, sad: 22.57, angry: 6.99, happy: 14.43 },
+    오승민: { neutral: 65.34, sad: 10.67, angry: 5.12, happy: 10.67 },
   }
 
   return (

@@ -50,7 +50,7 @@ const SummaryPage = () => {
           <video
             className="w-4/5 h-auto rounded-lg shadow-lg"
             controls
-            src="https://uc842a57ac1ca8046ef314d950ef.dl.dropboxusercontent.com/cd/0/inline/CfNwVMmvpOqC2hVZB7ltKQq_DOYfxD3ZqTeqU4AgcdPm_7XQSsW9cG0Uzd4ohS9xvfDGlQJLVosb_xHKVFXU60HaLEWBc_s6JQZ6du-Xf0ZwgeW-57W3Gl6-ZnDJlM5XmwachsutTCJSwso-lUy3_p2v/file#"
+            src="https://leafdesk-bucket-1.s3.ap-northeast-2.amazonaws.com/vmc/meeting1.mp4"
             title="회의 영상"
           >
             Your browser does not support the video tag.
